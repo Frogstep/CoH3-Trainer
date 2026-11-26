@@ -26,6 +26,8 @@ Set or freeze your manpower, munitions, fuel and population cap.
 - **[.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0)** (x64). On that page, pick
   **".NET Desktop Runtime"** for Windows x64. If it's missing, Windows tells you when you start the trainer and
   offers the download.
+- Windows 11 only: **Smart App Control** must be off (it blocks unsigned programs; see
+  [below](#antivirus-smartscreen-and-smart-app-control)). On most PCs it already is.
 - Company of Heroes 3 from Steam. Tested game versions: **5.1.52176** and **5.1.52564**.
 
 ## How to use
@@ -51,11 +53,20 @@ often doesn't break it, so check whether the values still match the game. If the
 [Releases page](https://github.com/Frogstep/CoH3-Trainer/releases) for a new version, or
 [open an issue](https://github.com/Frogstep/CoH3-Trainer/issues) with your game version (shown in the trainer).
 
-## Antivirus and SmartScreen warnings
+## Antivirus, SmartScreen and Smart App Control
 
-Trainers work by writing into another program's memory, so some antivirus programs flag them, and Windows
-SmartScreen warns about any new download that isn't code-signed ("Windows protected your PC" → **More info** →
-**Run anyway**). This trainer contains no network code and doesn't install anything. Only download it from the
+The trainer isn't code-signed (a signing certificate costs money every year, and this is a free hobby project).
+That has two effects:
+
+- **Smart App Control** (Windows 11): if it's on, Windows blocks the trainer with *"An Application Control policy
+  has blocked this file."* There is no per-app exception; the trainer can only run with Smart App Control turned
+  off (Windows Security → App & browser control → Smart App Control settings). Smart App Control is only active on
+  some fresh Windows 11 installs, and on some Windows versions it can't be turned back on without reinstalling
+  Windows, so decide for yourself whether that's worth it.
+- **SmartScreen** shows "Windows protected your PC" the first time; click **More info** → **Run anyway**.
+
+Trainers also work by writing into another program's memory, so some antivirus programs flag them. This trainer
+contains no network code and doesn't install anything. Only download it from the
 [official Releases page](https://github.com/Frogstep/CoH3-Trainer/releases). Each release lists the SHA-256 hash of
 its files so you can check that your download is the official one (`Get-FileHash CoH3Trainer.exe` in PowerShell).
 
@@ -63,6 +74,7 @@ its files so you can check that your download is the official one (`Get-FileHash
 
 | Problem | What to do |
 | --- | --- |
+| "An Application Control policy has blocked this file" | Smart App Control is on; see *Antivirus, SmartScreen and Smart App Control*. |
 | Nothing happens / a .NET message appears when starting | Install the .NET 10 **Desktop** Runtime (x64), see Requirements. |
 | "Waiting for RelicCoH3.exe..." | Start the game. The trainer finds it within a second. |
 | Attached, but "waiting for a battle" and values show `-` | Load into a mission or skirmish; the values only exist during a battle. |
