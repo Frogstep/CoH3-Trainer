@@ -1,7 +1,7 @@
 # CoH3 Trainer
 
 A small, free trainer for **Company of Heroes 3** (Steam, PC) for **offline campaign and skirmish**.
-Set or freeze your manpower, munitions, fuel and population cap.
+Set or freeze your manpower, munitions and fuel, and raise your population cap.
 
 > [!WARNING]
 > **Offline only. Do not use it in multiplayer or in any online/ranked game.** Changing game memory online is
@@ -13,8 +13,7 @@ Set or freeze your manpower, munitions, fuel and population cap.
 | Value | What you can do |
 | --- | --- |
 | Manpower, Munitions, Fuel | Set to any amount, or freeze so it never runs out |
-| Population Cap | Raise the cap (including the lower limits some campaign missions use) |
-| Population | Shows your current population (setting it directly is possible but raising the cap works better) |
+| Population Cap | Raise the cap to field a bigger army (also lifts the lower limits some campaign missions use) |
 
 - One small exe, no installer. Nothing is written to the game files; changes only last while the game is running.
 - Finds your player by itself, also after you load another mission.
@@ -37,14 +36,11 @@ Set or freeze your manpower, munitions, fuel and population cap.
 2. Start the game and load a campaign mission or a skirmish against the AI.
 3. Run `CoH3Trainer.exe`. When it says it's attached and shows your current values, you're ready.
 4. **Set** a value: type a number in *New value* and press **Enter** or click **Set**.
-5. **Freeze** a value: tick **Freeze**. It stays at the number in the box, or at the current value if the box is
-   empty. Frozen values are shown in blue. Untick to unfreeze.
+5. **Freeze** a resource: tick **Freeze**. It stays at the number in the box, or at the current value if the box
+   is empty. Frozen values are shown in blue. Untick to unfreeze. (Population Cap has no Freeze: once set, it stays.)
 
 **Player dropdown:** some campaign missions switch you to a different player partway through (for example when you
 take over another group). If the values in the trainer don't match the game, pick another player (1000–1003).
-
-**Population:** to field a bigger army, raise **Population Cap** instead of lowering Population. If the game
-puts the cap back after you build or upgrade something, freeze it.
 
 ## After a game update
 
@@ -80,7 +76,7 @@ its files so you can check that your download is the official one (`Get-FileHash
 | Attached, but "waiting for a battle" and values show `-` | Load into a mission or skirmish; the values only exist during a battle. |
 | Values don't match what the game shows | Try another player in the dropdown. If none match, the game was probably updated; see *After a game update*. |
 | "OpenProcess failed" | Run the trainer as administrator (only needed if the game runs as administrator). |
-| A value goes back after you set it | Tick **Freeze**. |
+| A resource goes back after you set it | Tick **Freeze**. |
 | Something else | [Open an issue](https://github.com/Frogstep/CoH3-Trainer/issues) with the game version, the trainer version (window title) and what the trainer shows. |
 
 ## Disclaimer
